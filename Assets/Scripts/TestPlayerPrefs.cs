@@ -27,17 +27,18 @@ public class TestPlayerPrefs : MonoBehaviour {
         if(GUI.Button(new Rect(Screen.width / 2 - 50, Screen.height - 80, 100, 30), (temp? "Saved": "Save Player Prefs")))
         {
             temp = true;
-            UpdatePlayerPrefs();
-			RegistryKey rk = Registry.LocalMachine.OpenSubKey("Software\\" + PlayerSettings.companyName +"\\" + PlayerSettings.productName , false);
+            //UpdatePlayerPrefs();
+            DataSerialization.Save();
         }
         if (GUI.Button(new Rect(Screen.width / 2 - 50, Screen.height - 130, 100, 30), (temp2 ? "Loaded" : "Load Player Prefs")))
         {
             temp2 = true;
-            floatOne = PlayerPrefs.GetFloat("FloatOne");
-            floatTwo = PlayerPrefs.GetFloat("FloatTwo");
-            floatThree = PlayerPrefs.GetFloat("FloatThree");
-            stringOne = PlayerPrefs.GetString("stringOne");
-            intOne = PlayerPrefs.GetInt("IntOne");
+            //floatOne = PlayerPrefs.GetFloat("FloatOne");
+            //floatTwo = PlayerPrefs.GetFloat("FloatTwo");
+            //floatThree = PlayerPrefs.GetFloat("FloatThree");
+            //stringOne = PlayerPrefs.GetString("stringOne");
+            //intOne = PlayerPrefs.GetInt("IntOne");
+            DataSerialization.Load();
         }
     }
 }
